@@ -1,0 +1,116 @@
+
+ $border-radius-left-card: 10px 10px 0 0;
+ $border-radius-right-card: 0 0 10px 10px;
+ #cards-container{
+     width: 90%;
+     margin: 0 auto;
+    .card{
+        height: 400px;
+        width: 100%;
+        padding: 40px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-direction: column;
+        &:nth-child(1){
+            background-color: $brightOrange;
+            border-radius:  $border-radius-left-card;
+            .button{
+                &:hover{
+                    
+                }
+            }
+        }
+        &:nth-child(2){
+            background-color: $darkCyan;
+            .button{
+                color: $darkCyan;
+                &:hover{
+
+                }
+            }
+
+        }
+        &:nth-child(3){
+            background-color: $darkCyan2;
+            border-radius: $border-radius-right-card;
+             .button{
+                color: $darkCyan2;
+                &:hover{
+
+                }
+            }
+        }
+        h3{
+            font-size: 35px;
+            text-transform: uppercase;
+            color: $fontColor;
+            margin: 15px 0;
+        }
+        p{
+            color: $fontColor;
+            font-size: 14px;
+        }
+        .button{
+            
+            border-radius: 30px;
+            border: 2px solid $fontColor;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: $brightOrange;
+            padding: 10px 30px;
+            margin-top: 15px;
+
+        }
+    }
+}
+
+@media screen and (min-width:375px) {
+    #cards-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 50%;
+        margin: 0 auto;
+        .card{
+            :is(.button){
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            &:nth-child(1){
+                background-color: $brightOrange;
+                border-radius:  10px 0 0 10px;
+                .button{
+                    &:hover{
+                        background-color: $brightOrange;
+                        color: $fontColor;
+                    }
+                }
+            }
+            &:nth-child(2){
+                background-color: $darkCyan;
+                .button{
+                    color: $darkCyan;
+                    &:hover{
+                        background-color: $darkCyan;
+                        color: $fontColor;
+                    }
+                }
+
+            }
+            &:nth-child(3){
+                background-color: $darkCyan2;
+                border-radius: 0 10px 10px 0;
+                .button{
+                    color: $darkCyan2;
+                    &:hover{
+                        background-color: $darkCyan2;
+                        color: $fontColor;
+                    }
+                }
+            }
+        }
+    }
+}

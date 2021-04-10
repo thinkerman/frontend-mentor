@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+#cards-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#cards-container .card {
+  height: 400px;
+  width: 100%;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#cards-container .card:nth-child(1) {
+  background-color: #e38826;
+  border-radius: 10px 10px 0 0;
+}
+
+#cards-container .card:nth-child(2) {
+  background-color: #006970;
+}
+
+#cards-container .card:nth-child(2) .button {
+  color: #006970;
+}
+
+#cards-container .card:nth-child(3) {
+  background-color: #004241;
+  border-radius: 0 0 10px 10px;
+}
+
+#cards-container .card:nth-child(3) .button {
+  color: #004241;
+}
+
+#cards-container .card h3 {
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  margin: 15px 0;
+}
+
+#cards-container .card p {
+  color: #f2f2f2;
+  font-size: 14px;
+}
+
+#cards-container .card .button {
+  border-radius: 30px;
+  border: 2px solid #f2f2f2;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #e38826;
+  padding: 10px 30px;
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 375px) {
+  #cards-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  #cards-container .card :is(.button):hover {
+    cursor: pointer;
+  }
+  #cards-container .card:nth-child(1) {
+    background-color: #e38826;
+    border-radius: 10px 0 0 10px;
+  }
+  #cards-container .card:nth-child(1) .button:hover {
+    background-color: #e38826;
+    color: #f2f2f2;
+  }
+  #cards-container .card:nth-child(2) {
+    background-color: #006970;
+  }
+  #cards-container .card:nth-child(2) .button {
+    color: #006970;
+  }
+  #cards-container .card:nth-child(2) .button:hover {
+    background-color: #006970;
+    color: #f2f2f2;
+  }
+  #cards-container .card:nth-child(3) {
+    background-color: #004241;
+    border-radius: 0 10px 10px 0;
+  }
+  #cards-container .card:nth-child(3) .button {
+    color: #004241;
+  }
+  #cards-container .card:nth-child(3) .button:hover {
+    background-color: #004241;
+    color: #f2f2f2;
+  }
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f2f2f2;
+}
+
+body p {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+body :is(h1, h2, h3, h4, h5) {
+  font-family: 'Big Shoulders Display', cursive;
+}
+/*# sourceMappingURL=style.css.map */

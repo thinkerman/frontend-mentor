@@ -1,0 +1,98 @@
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    section{
+        padding:  0 30px;
+    }
+    #filter-section{
+        // height: 100px;
+        .inner-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            #header{
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+            #invoice-count{
+                font-size: 14px;
+            }
+            #filter-container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                #dropdown{
+                    img{
+                        padding-left: 15px;
+                    }
+                }
+                #filter-button{
+                    background-color: $purple1;
+                    border-radius: 50px;
+                    color: $offwhite;
+                    padding: 6px 10px;
+                    margin-left: 40px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 90px;
+                    img{
+                        background-color: $offwhite;
+                        padding: 10px;
+                        border-radius: 50%;
+                        // margin-right: 15px;
+                    }
+                    span:nth-child(2){
+                        font-size: 12px;
+                        padding-right: 10px;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    #empty-image{
+        width: 100%;
+        margin-top:50px;
+        #empty-result{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 70%;
+            margin: 0 auto;
+            h4{
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 14px;
+                line-height: 28px;
+                max-width: 70%;
+                text-align: center
+            }
+        }
+    }
+
+ 
+}
+
+   @media screen and (min-width:768px){
+        main{
+            width: 100%;
+        }
+    }

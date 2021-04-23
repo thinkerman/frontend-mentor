@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Invoice</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <main class="empty">
+        <section id="single-invoice-section">
+            <div class="inner-wrapper">
+                <div id="back-button">
+                    <img src="./assets/icon-arrow-left.svg" alt="icon-arrow-down">
+                    <span>Go back</span>
+                </div>
+
+            </div>
+        </section>
+        <section class="card-details">
+            <div class="invoice-card">
+                <div class="invoice-card-inner">
+                    <div class="card-details">
+                        <div class="invoice-button">
+                            <span>Status &nbsp; &nbsp;</span>
+                            <span type="button" class="invoice-status">Pending</span>
+                        </div>
+                        <div class="operation-buttons">
+                            <div class="invoice-button edit">edit</div>
+                            <div class="invoice-button delete">delete</div>
+                            <div class="invoice-button mark-paid">mark paid</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!--Card-->
+        <section id="invoice-section"> </section>
+        <!-- End of card -->
+    </main>
+    <script>
+        const BACK_BUTTON = document.querySelector('#back-button');
+        BACK_BUTTON.addEventListener('click', (event) => {
+            history.back()
+        })
+    </script>
+    <script src="./js/header.js"></script>
+    <script src="./js/single-invoice.js"></script>
+</body>
+
+</html>

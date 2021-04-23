@@ -1,0 +1,40 @@
+#single-invoice-section{
+    margin-top:40px;
+    #back-button{
+        margin-bottom: 30px;
+        img{
+            margin-right: 15px;
+        }
+        span{
+            font-size: 14px;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    
+}
+.card-details{
+    .operation-buttons{
+        display: flex;
+        justify-content: space-between;
+        .invoice-button{
+            padding: 10px 15px;
+            text-transform: capitalize;
+            font-size: 14px;
+            border-radius: 5px;
+            margin: 0 5px;
+            &:hover{
+                cursor: pointer;
+            }
+            &.delete{
+                background-color: red;
+                color: $offwhite;
+            }
+            &.mark-paid{
+                background-color: $purple1;
+                color: $offwhite;
+            }
+        }
+    }
+}

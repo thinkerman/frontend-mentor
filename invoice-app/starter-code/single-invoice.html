@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
-<body>
+<body class="single-invoice">
     <main class="empty">
         <section id="single-invoice-section">
             <div class="inner-wrapper">
@@ -21,7 +21,6 @@
                     <img src="./assets/icon-arrow-left.svg" alt="icon-arrow-down">
                     <span>Go back</span>
                 </div>
-
             </div>
         </section>
         <section class="card-details">
@@ -42,11 +41,199 @@
 
             </div>
         </section>
+        <section id="invoice-section">
+            <div class="invoice-details">
+                <div class="seller-info">
+                    <div class="item-details">
+                        <div class="item-id">#XM9141</div>
+                        <P class="item-name">Graphic Design</P>
+                    </div>
+                    <div class="seller-address">
+                        <p class="seller-street">19 Union Terrace</p>
+                        <p class="seller-city">London</p>
+                        <p class="seller-postcode">E1 3EZ</p>
+                        <p class="seller-country">United Kingdom</p>
+                    </div>
+                </div>
+                <div class="buyer-info">
+                    <div class="invoice-date">
+                        <div>
+                            <p class="faint">Invoice Date</p>
+                            <p class="created-date">21 Aug 2021</p>
+                        </div>
+                        <div>
+                            <p class="faint">Payment Due</p>
+                            <p class="paid-date">21 Aug 2021</p>
+                        </div>
+                    </div>
+                    <div class="invoice-address">
+                        <p class="faint">Bill to</p>
+                        <p class="buyer-name">Alex Grim</p>
+                        <p class="buyer-address">84 Church Way</p>
+                        <div>
+
+                            <!-- <p class="faint">Bradford</p>
+                            <p class="faint">BD1 9PB</p>
+                            <p class="faint">United Kigdom</p> -->
+                        </div>
+                    </div>
+                    <div class="reciever-email">
+                        <p class="faint">Sent to</p>
+                        <p class="buyer-email">alexgrim@gmail.com</p>
+                    </div>
+                </div>
+                <div class="items-section">
+                    <div>
+
+                        <table id="items-table">
+                            <thead>
+                                <tr>
+                                    <td>Item name</td>
+                                    <td>QTY.</td>
+                                    <td>Price</td>
+                                    <td>Total</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Amount Due</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td id="invoice-amount-due">Amount Due</td>
+                                </tr>
+
+                            </tfoot>
+
+                        </table>
 
 
-        <!--Card-->
-        <section id="invoice-section"> </section>
-        <!-- End of card -->
+                    </div>
+                </div>
+        </section>
+        <div class="popup active2">
+            <div id="form">
+                <!--  -->
+                <section id="bill-from-section">
+                    <div class="form-header">Bill From</div>
+                    <div class="form-field">
+                        <label for="street-address">Street Address</label>
+                        <input type="text" name="street-address" id="popup-street-from-address">
+                    </div>
+                    <div class="form-field triple">
+                        <div class="field">
+                            <label for="street-address">City</label>
+                            <input type="text" name="street-address" id="popup-from-city" value="London">
+                        </div>
+                        <div class="field">
+                            <label for="street-address">Post Code</label>
+                            <input type="text" name="street-address" id="popup-from-post-code" value="E1 3EZ">
+                        </div>
+                        <div class="field">
+                            <label for="street-address">Country</label>
+                            <input type="text" name="street-address" id="popup-from-street-address"
+                                value="United Kindgom">
+                        </div>
+
+                    </div>
+                </section>
+                <!--  -->
+                <section id="bill-to-section">
+                    <div class="form-header">Bill To</div>
+                    <div class="field">
+                        <label for="clients-name">Client's Name</label>
+                        <input type="text" name="clients-name" id="popup-clients-name" value="Alex Grim">
+                    </div>
+
+                    <div class="field">
+                        <label for="clients-email">Client's Email</label>
+                        <input type="text" name="clients-email" id="popup-clients-email" value="alexgrim@mail.com">
+                    </div>
+
+                    <div class="field">
+                        <label for="street-address">Street Address</label>
+                        <input type="text" name="street-address" id="popup-street-to-address" value="84 Church Way">
+                    </div>
+
+                    <div class="form-field">
+                        <div class="field">
+                            <label for="street-address">City</label>
+                            <input type="text" name="street-address" id="street-address" value="London">
+                        </div>
+                        <div class="field">
+                            <label for="street-address">Post Code</label>
+                            <input type="text" name="street-address" id="popup-to-post-code" value="E1 3EZ">
+                        </div>
+                        <div class="field">
+                            <label for="street-address">Country</label>
+                            <input type="text" name="street-address" id="popup-to-post-country" value="United Kindgom">
+                        </div>
+
+                        <div class="form-field double">
+                            <div class="field">
+                                <label for="invoice-date">Invoice Date</label>
+                                <input type="date" name="invoice-date" id="popup-to-post-invoice-date" value="">
+                            </div>
+                            <div class="field">
+                                <label for="payment-terms">Payment Terms</label>
+                                <select name="payment-terms" id="popup-to-post-payment-terms">
+                                    <option value="30">Net 30 Days</option>
+                                    <option value="60">Net 60 Days</option>
+                                    <option value="90">Net 90 Days</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+                        <div class="field">
+                            <label for="project-description">Project Description</label>
+                            <input type="text" name="project-description" id="project-description"
+                                value="Graphic Design">
+                        </div>
+                    </div>
+
+
+                </section>
+                <!--  -->
+                <section id="item-list-section">
+                    <div class="form-header">Item List</div>
+                    <div class="field">
+                        <table id="items-list">
+                            <thead>
+                                <tr>
+                                    <td>Item name</td>
+                                    <td>QTY.</td>
+                                    <td>Price</td>
+                                    <td>Total</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                    <td>Banner Design</td>
+                                    <td>1</td>
+                                    <td>156.00</td>
+                                    <td>156.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Banner Design</td>
+                                    <td>1</td>
+                                    <td>156.00</td>
+                                    <td>156.00</td>
+                                </tr> -->
+                            </tbody>
+
+                        </table>
+                        <div class="invoice-button add-new" id="add-new-item">+ Add New Item</div>
+                        <div id="form-actions">
+                            <div class="invoice-button edit" id="cancel">Cancel</div>
+                            <div class="invoice-button mark-paid">Save Changes</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
     <script>
         const BACK_BUTTON = document.querySelector('#back-button');

@@ -1,40 +1,268 @@
-#single-invoice-section{
-    margin-top:40px;
-    #back-button{
-        margin-bottom: 30px;
-        img{
-            margin-right: 15px;
-        }
-        span{
-            font-size: 14px;
-        }
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    
-}
-.card-details{
-    .operation-buttons{
-        display: flex;
-        justify-content: space-between;
-        .invoice-button{
-            padding: 10px 15px;
-            text-transform: capitalize;
-            font-size: 14px;
-            border-radius: 5px;
-            margin: 0 5px;
-            &:hover{
+body.single-invoice {
+    #single-invoice-section {
+        margin-top: 40px;
+        #back-button {
+            margin-bottom: 30px;
+            img {
+                margin-right: 15px;
+            }
+            span {
+                font-size: 14px;
+            }
+            &:hover {
                 cursor: pointer;
             }
-            &.delete{
-                background-color: red;
-                color: $offwhite;
-            }
-            &.mark-paid{
-                background-color: $purple1;
-                color: $offwhite;
+        }
+    }
+    .card-details {
+        .operation-buttons {
+            display: flex;
+            justify-content: space-between;
+            .invoice-button {
+                padding: 10px 15px;
+                text-transform: capitalize;
+                font-size: 14px;
+                border-radius: 5px;
+                margin: 0 5px;
+                &:hover {
+                    cursor: pointer;
+                }
+                &.edit {
+                    background-color: $grey;
+                }
+                &.delete {
+                    background-color: $red;
+                    color: $grey;
+                }
+                &.mark-paid {
+                    background-color: $purple1;
+                    color: $offwhite;
+                }
             }
         }
+    }
+    #invoice-section {
+        .invoice-details {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+
+            .seller-info {
+                display: flex;
+                justify-content: space-between;
+            }
+            .buyer-info {
+                display: flex;
+                justify-content: space-between;
+                .invoice-date {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+            .items-section {
+                background-color: $grey;
+                border-radius: 10px 10px 0 0;
+                table {
+                    margin-top: 30px;
+                    // padding: 20px;
+                    width: 100%;
+                    border: 0;
+                    border-spacing: 20px 10px;
+                    border-collapse: collapse;
+                    // border-collapse: collapse;
+
+                    // border-collapse: initial;
+                    font-size: 14px;
+                    td {
+                        padding: 15px 30px;
+                    }
+                    thead {
+                        font-weight: bold;
+                    }
+                    tbody {
+                        tr {
+                            font-size: 14px;
+                        }
+                    }
+                    tfoot {
+                        background-color: $deeppurple;
+                        color: $offwhite;
+                        td {
+                            padding: 20px 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // height: 300px;
+    }
+    .popup {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        overflow: scroll;
+        display: none;
+        // &.inactive {
+        //     background-color: rgba(#000000, 0.5);
+        //     display: none;
+        // }
+        .form-header {
+            font-weight: bold;
+        }
+        &.active {
+            background-color: rgba(#000000, 0.5);
+            display: block;
+            transition: 0.5s all ease-in-out;
+        }
+        #form {
+            width: 600px;
+            max-width: 100%;
+            border-radius: 0 30px 30px 0;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transform: translateX(85px);
+            z-index: -1;
+            padding: 20px;
+            // overflow: scroll;
+
+            section {
+                width: 90%;
+                margin-bottom: 30px;
+                // max-width:400px;
+                // margin: 0 auto;
+                .form-header {
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+                input[type="text"],
+                input[type="date"],
+                select {
+                    padding: 15px 10px;
+                    border-radius: 5px;
+                    border: 1px solid $offwhite;
+                    margin-bottom: 10px;
+                    width: 100%;
+                }
+                label {
+                    width: 100%;
+                    display: block;
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
+                .form-field {
+                    margin-bottom: 15px;
+                    &.double {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 105%;
+                        .field {
+                            // flex: 1;
+                            display: inline-flex;
+                            flex-direction: column;
+                            width: 45%;
+                            label {
+                                // flex: 1;
+                                width: 100%;
+                            }
+                            input {
+                            }
+                        }
+                    }
+                    &.triple {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 107%;
+                        .field {
+                            display: flex;
+                            flex-direction: column;
+                            input {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+                .field {
+                    margin-bottom: 20px;
+                }
+                #add-new-item {
+                    margin-bottom: 30px;
+                }
+                &#item-list-section {
+                    .field {
+                        width: 105%;
+                    }
+                }
+                #form-actions {
+                    display: flex;
+                    justify-content: center;
+                    .form-header {
+                        margin-bottom: 30px;
+                    }
+                    .invoice-button {
+                        padding: 10px 15px;
+                        text-transform: capitalize;
+                        font-size: 14px;
+                        border-radius: 5px;
+                        margin: 0 5px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        &.edit {
+                            background-color: $grey;
+                        }
+                        &.delete {
+                            background-color: $red;
+                            color: $grey;
+                        }
+                        &.mark-paid {
+                            background-color: $purple1;
+                            color: $offwhite;
+                        }
+                    }
+                }
+            }
+            table {
+                width: 100%;
+                border: 0;
+                padding: 0;
+                // border-spacing: 20px;
+                margin-bottom: 30px;
+                tr {
+                    // padding: 0;
+                    margin-bottom: 20px;
+                }
+                tbody {
+                    tr {
+                    }
+                    td {
+                        border: 1px solid $offwhite;
+                        padding: 20px 10px;
+                        border-radius: 5px;
+                        margin: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .add-new {
+                width: 100%;
+                background-color: $grey;
+                padding: 15px;
+                border-radius: 10px;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
     }
 }

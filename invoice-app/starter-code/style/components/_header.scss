@@ -1,28 +1,28 @@
-header{
+header {
     display: flex;
     width: 100%;
     height: 75px;
     background-color: $purple3;
     justify-content: space-between;
-    &.menu-container{
-         #logo{
-        
+    z-index: 2;
+    &.menu-container {
+        #logo {
             max-width: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex:1;
+            flex: 1;
 
             background-color: $purple1;
             border-radius: 0 18px 18px 0;
             position: relative;
             overflow: hidden;
-            img{
+            img {
                 z-index: 1;
             }
-            &:after{
+            &:after {
                 display: block;
-                content: '';
+                content: "";
                 height: 50%;
                 width: 100%;
                 background-color: $purple2;
@@ -33,60 +33,56 @@ header{
                 z-index: 0;
             }
         }
-        #menu{
+        #menu {
             display: flex;
             align-items: center;
             justify-content: flex-end;
             flex: 3;
-            #avatar{
+            #avatar {
                 display: flex;
                 align-items: center;
                 padding: 0 30px;
                 height: 100%;
                 border-left: 1px solid $offwhite;
-                
-                img{
+
+                img {
                     height: 30px;
                     width: 30px;
 
                     border-radius: 50%;
                 }
             }
-            #theme-switcher{
+            #theme-switcher {
                 padding: 20px;
             }
-            
         }
     }
-   
-    
 }
-@media screen and (min-width: 768px){
-   header{
-       width: 100px;
-       height: 100vh;
-       flex-direction: column;
-       border-radius: 0 18px 18px 0;
-       &.menu-container{
-           #logo{
+@media screen and (min-width: 768px) {
+    header {
+        width: 100px;
+        height: 100vh;
+        flex-direction: column;
+        border-radius: 0 18px 18px 0;
+        &.menu-container {
+            #logo {
                 height: 100px;
                 max-width: 100px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex: none;
-                
 
                 background-color: $purple1;
                 border-radius: 0 18px 18px 0;
                 position: relative;
                 overflow: hidden;
-                img{
+                img {
                     z-index: 1;
                 }
-                &:after{
+                &:after {
                     display: block;
-                    content: '';
+                    content: "";
                     height: 50%;
                     width: 100%;
                     background-color: $purple2;
@@ -97,30 +93,29 @@ header{
                     z-index: 0;
                 }
             }
-            #menu{
+            #menu {
                 display: flex;
                 justify-content: space-between;
                 flex-direction: column;
                 align-items: center;
                 flex: none;
-                #avatar{
+                #avatar {
                     display: flex;
                     align-items: center;
                     padding: 30px;
                     border-top: 1px solid $offwhite;
                     border-left: none;
                     height: auto;
-                    img{
+                    img {
                         height: 30px;
                         width: 30px;
                         border-radius: 50%;
                     }
                 }
-                #theme-switcher{
+                #theme-switcher {
                     padding: 20px;
                 }
             }
         }
-
-   } 
+    }
 }

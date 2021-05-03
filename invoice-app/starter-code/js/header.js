@@ -45,6 +45,15 @@ function header() {
     HEADER.append(LOGO_CONTAINER);
     HEADER.append(MENU);
 
+    // const BACKDROP = document.createElement('div');
+    // BACKDROP.classList.add('popup', 'inactive');
+
+    // const NEW_INVOICE_FORM = document.createElement('form');
+    // const FORM_SECTION = function () {
+
+    // }
+
+
 
     BODY.insertBefore(HEADER, MAIN)
 }

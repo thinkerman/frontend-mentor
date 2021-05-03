@@ -1,58 +1,63 @@
-html{
+html {
     padding: 0;
     margin: 0;
     height: 100vh;
     width: 100vw;
     font-size: 100%;
-    body{
+    body {
         box-sizing: border-box;
         font-size: 1rem;
         padding: 0;
         margin: 0;
-        font-family: 'Spartan',sans-serif;
+        font-family: "Spartan", sans-serif;
         background: #ededed;
-        h1{
-            font-family: 'Spartan', sans-serif;
+        overflow: hidden;
+        h1 {
+            font-family: "Spartan", sans-serif;
             font-weight: bold;
             font-size: 32px;
             line-height: 36px;
             letter-spacing: -1;
         }
-        h2{
-            font-family: 'Spartan',sans-serif;
+        h2 {
+            font-family: "Spartan", sans-serif;
             font-weight: bold;
             font-size: 20px;
             line-height: 22px;
             letter-spacing: -0.63;
         }
         h3,
-        h4{
-            font-family: 'Spartan',sans-serif;
+        h4 {
+            font-family: "Spartan", sans-serif;
             font-weight: bold;
             font-size: 16px;
             line-height: 24px;
-            letter-spacing: -0.80;
+            letter-spacing: -0.8;
         }
-        p{
-            font-family: 'Spartan',sans-serif;
+        p {
+            font-family: "Spartan", sans-serif;
             font-size: 12px;
             line-height: 15px;
             letter-spacing: -0.25;
         }
-        main{
+        main {
             padding: 0;
-            
         }
-
+        table {
+            width: 100%;
+        }
         main,
-        section{
+        section {
             box-sizing: border-box;
         }
+        .faint {
+            color: $black;
+            font-weight: 500;
+        }
 
-        @media screen and (min-width:768px){
+        @media screen and (min-width: 768px) {
             display: flex;
             flex-direction: row;
-            
         }
     }
 }

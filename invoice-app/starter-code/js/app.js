@@ -11,7 +11,7 @@ const INVOICE_CARD = document.querySelector('.invoice-card');
 // let singleInvoice = document.querySelector('.invoice-card');
 
 
-function invoiceCard(id, name, paymentDue, amount, status, address) {
+function invoiceCard(index, id, name, paymentDue, amount, status, address) {
     let card = document.createElement('div');
     card.id = id;
     card.classList.add('invoice-card');
@@ -24,17 +24,11 @@ function invoiceCard(id, name, paymentDue, amount, status, address) {
                                 <p class="invoice-name">${name}</p>
                                 <p class="date">Due ${paymentDue}</p>
                                 <p class="amount">${amount.toLocaleString('en-US', { style: 'currency', currency: 'GBP', })}</p>
-                                <div class="invoice-button">
+                                <div class="invoice-button" >
                                     <span type="button" class="invoice-status ${status}"  
                                         data-id="${id}" 
-                                        data-name="${name}" 
-                                        data-due="${paymentDue}"
-                                        data-amount=${amount.toLocaleString('en-US', { style: 'currency', currency: 'GBP', })} 
-                                        data-city="${address.city}"
-                                        data-status="${status}"
-                                        data-country="${address.country}"
-                                        data-postcode="${address.postCode}"
-                                        data-street="${address.street}">${status}</span>
+                                        data-index="${index}" 
+                                        >${status}</span>
                                     <img src="./assets/icon-arrow-right.svg" alt="icon-arrow-right">
                                 </div>
                             </div>`;
@@ -55,11 +49,13 @@ fetch('./data.json').then(response => response.json()).then(data => {
 
     document.querySelector('#invoice-count').textContent = `There are ${data.length} invoices`;
 
+    // save all data in localstorage
+    localStorage.setItem('invoice-data', JSON.stringify(data))
 
     for (const index in data) {
         const CURRENTDATA = data[index];
         // console.log(CURRENTDATA.senderAddress)
-        INVOICE_SECTION.append(invoiceCard(CURRENTDATA.id, CURRENTDATA.clientName, CURRENTDATA.paymentDue, CURRENTDATA.total, CURRENTDATA.status, CURRENTDATA.senderAddress))
+        INVOICE_SECTION.append(invoiceCard(index, CURRENTDATA.id, CURRENTDATA.clientName, CURRENTDATA.paymentDue, CURRENTDATA.total, CURRENTDATA.status, CURRENTDATA.senderAddress))
     }
 
 
@@ -72,9 +68,19 @@ const CARD_SECTION = document.querySelector('#invoice-section');
 CARD_SECTION.addEventListener('click', event => {
     if (event.target.classList.contains('invoice-status')) {
         console.log(event.target.dataset)
-        localStorage.setItem('currentInvoice', JSON.stringify(event.target.dataset));
 
-        window.location = document.location.href + 'single-invoice.html'
+        // get index of current item
+        const INDEX = event.target.dataset.index;
+        // get all data
+        const DATA = JSON.parse(localStorage.getItem('invoice-data'));
+
+        console.log(DATA[INDEX]);
+        // console.log(DATA[INDEX]);
+        localStorage.setItem('currentInvoice', JSON.stringify(DATA[INDEX]));
+        let url = document.location.pathname.split('/');
+        url[url.length - 1] = 'single-invoice.html';
+        let newUrl = url.join('/');
+        window.location.pathname = newUrl
     }
 })
 
@@ -95,8 +101,6 @@ function emptyBodyContent() {
 }
 
 // check if invoice is empty
-
-
 if (MAIN_ELEMENT.classList.contains('empty')) {
     MAIN_ELEMENT.append(emptyBodyContent())
 } else {

@@ -38,28 +38,39 @@ function invoiceCard(index, id, name, paymentDue, amount, status, address) {
 }
 
 
+const INVOICE_SECTION = document.querySelector('#invoice-section');
 
-// load all invoices
-fetch('./data.json').then(response => response.json()).then(data => {
-    console.log(data)
+MAIN_ELEMENT.append(INVOICE_SECTION)
 
-    const INVOICE_SECTION = document.querySelector('#invoice-section');
+if (!localStorage.getItem('invoice-data')) {
+    // load all invoices
+    fetch('./data.json').then(response => response.json()).then(data => {
+        console.log(data)
 
-    MAIN_ELEMENT.append(INVOICE_SECTION)
 
-    document.querySelector('#invoice-count').textContent = `There are ${data.length} invoices`;
+        document.querySelector('#invoice-count').textContent = `There are ${data.length} invoices`;
 
-    // save all data in localstorage
-    localStorage.setItem('invoice-data', JSON.stringify(data))
+        // save all data in localstorage
+        if (!localStorage.getItem('invoice-data')) {
+            localStorage.setItem('invoice-data', JSON.stringify(data))
+        }
 
+        for (const index in data) {
+            const CURRENTDATA = data[index];
+            INVOICE_SECTION.append(invoiceCard(index, CURRENTDATA.id, CURRENTDATA.clientName, CURRENTDATA.paymentDue, CURRENTDATA.total, CURRENTDATA.status, CURRENTDATA.senderAddress))
+        }
+
+
+    })
+} else {
+    const data = JSON.parse(localStorage.getItem('invoice-data'))
     for (const index in data) {
         const CURRENTDATA = data[index];
-        // console.log(CURRENTDATA.senderAddress)
         INVOICE_SECTION.append(invoiceCard(index, CURRENTDATA.id, CURRENTDATA.clientName, CURRENTDATA.paymentDue, CURRENTDATA.total, CURRENTDATA.status, CURRENTDATA.senderAddress))
     }
+}
 
 
-})
 
 
 const CARD_SECTION = document.querySelector('#invoice-section');
@@ -75,8 +86,7 @@ CARD_SECTION.addEventListener('click', event => {
         const DATA = JSON.parse(localStorage.getItem('invoice-data'));
 
         console.log(DATA[INDEX]);
-        // console.log(DATA[INDEX]);
-        localStorage.setItem('currentInvoice', JSON.stringify(DATA[INDEX]));
+        localStorage.setItem('invoice-idx', INDEX);
         let url = document.location.pathname.split('/');
         url[url.length - 1] = 'single-invoice.html';
         let newUrl = url.join('/');
